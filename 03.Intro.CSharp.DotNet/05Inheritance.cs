@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Xamarin.Course.Intro.CSharp.DotNet
 {
@@ -36,6 +33,41 @@ namespace Xamarin.Course.Intro.CSharp.DotNet
 
             // Error: cannot inherit from sealed class
             // class Copycat : Tesla { }
+        }
+    }
+
+    namespace Polymorphism
+    {
+        class Example
+        {
+            class Car {
+                public virtual string Fuel {
+                    get { return "gasoline"; }
+                }
+            }
+
+            class ElectricCar : Car {
+                public sealed override string Fuel {
+                    get { return "electricity"; }
+                }
+            }
+
+            class Tesla : ElectricCar {
+                // Error: cannot override sealed method
+                //public override string Fuel { get { return "Musk"; } }
+
+                // ... but we can explicitly shadow it
+                public new string Fuel {
+                    get { return "Musk"; }
+                }
+            }
+
+            public void Use() {
+                Tesla tesla = new Tesla();
+                Console.WriteLine(tesla.Fuel);  // Musk
+                ElectricCar car = tesla;
+                Console.WriteLine(car.Fuel);  // electricity 
+            }
         }
     }
 }

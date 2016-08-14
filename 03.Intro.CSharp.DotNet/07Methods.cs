@@ -5,7 +5,38 @@ namespace Xamarin.Course.Intro.CSharp.DotNet
 {
     namespace Methods
     {
+        public class Example
+        {
+            class Rectangle
+            {
+                private float length;
+                private float height;
 
+                float GetLength()
+                {
+                    return length;
+                }
+
+                float GetArea() => length * height;
+
+                void PrintArea(string pre, string post)
+                {
+                    Console.Write(pre);
+                    Console.Write(this.GetArea());
+                    Console.WriteLine(post);
+                }
+
+                void PrintArea(string prefix)
+                {
+                    PrintArea(prefix, "mm²");
+                }
+
+                void PrintArea()
+                {
+                    PrintArea("Rectangle: ");
+                }
+            }
+        }
     }
 
     namespace Parameters
