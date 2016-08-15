@@ -32,8 +32,10 @@ namespace Xamarin.Course.Intro.CSharp.DotNet
                 // Instantiation
                 new Example();
 
-                // Error: only assignment, call, increment, decrement
-                // and new object expressions can be used as statements
+
+                // Error: only assignment, call, increment,
+                // decrement and new object expressions can
+                // be used as statements
                 //2 + 2;
             }
         }
