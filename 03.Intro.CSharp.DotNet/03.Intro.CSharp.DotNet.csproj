@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="001LocalDeclarations.cs" />
     <Compile Include="01ProgramStructure.cs" />
     <Compile Include="02Namespaces.cs" />
     <Compile Include="03Classes.cs" />
