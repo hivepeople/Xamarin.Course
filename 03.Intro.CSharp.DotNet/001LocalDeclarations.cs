@@ -40,6 +40,8 @@ namespace Xamarin.Course.Intro.CSharp.DotNet
                 // Now we can use it
                 int current = index;
             }
+
+            public int MyNum { get; }
         }
     }
 }

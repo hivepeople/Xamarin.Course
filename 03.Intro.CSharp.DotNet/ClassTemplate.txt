@@ -1,0 +1,86 @@
+﻿using <SomeNamespace>
+using <AnotherNamespace>
+// Other imports...
+
+namespace <ThisNamespace>
+{
+    [accessModifier] [static] class <ClassName>
+    [: SuperClass[, Interface1, ...]]
+    {
+        // Field without initialization
+        [accessModifier] <datatype> <fieldName>;
+
+        // Field initialized once, when instance constructed
+        [accessModifier] <datatype> <fieldName> = <expression>;
+        
+        // Other fields...
+
+
+        // Constructor
+        [accessModifier] <ClassName>([<datatype> <parameterName>, ...])
+        [: this(<arguments>)] /* OR */ [: base(<arguments>)]
+        {
+            // Constructor body: initialize fields here
+        }
+
+        // Other constructors...
+
+
+        // Method
+        [accessModifier] <returnValueDatatype> <MethodName>([<datatype> <parameterName>, ...])
+        {
+            // method body: do anything here
+            // return value if returnValueDatatype
+            // is anything else than void
+        }
+
+        // Other methods...
+    }
+}
+
+namespace <ThisNamespace>
+{
+    [accessModifier] [static] class <ClassName>
+    [: SuperClass[, Interface1, ...]]
+    {
+        // Auto-implemented read-only property
+        [accessModifier] <datatype> <PropertyName> { get; }
+
+        // Auto-implemented read/write property
+        [accessModifier] <datatype> <PropertyName> { [accessModifier] get; [accessModifier] set; }
+        
+        // Full read-only property
+        [accessModifier] <datatype> <PropertyName>
+        {
+            [accessModifier] get { /* get body: return something here */ }
+        }
+
+        // Full property
+        [accessModifier] <datatype> <PropertyName>
+        {
+            [accessModifier] get { /* get body: return something here */ }
+            [accessModifier] set { /* set body: do something with "value" here */ }
+        }
+
+        // Other properties...
+    }
+}
+
+namespace <ThisNamespace>
+{
+    [accessModifier] [static] class <ClassName>
+    [: SuperClass[, Interface1, ...]]
+    {
+        // Event
+        [accessModifier] event <delegateDatatype> <EventName>;
+
+        // Method
+        [accessModifier] <returnValueDatatype> <MethodName>([<datatype> <parameterName>, ...])
+        {
+            // method body: do anything here
+            // return value if returnValueDatatype is anything else than void
+        }
+
+        // Other methods...
+    }
+}

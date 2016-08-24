@@ -36,4 +36,35 @@ namespace Xamarin.Course.Intro.CSharp.DotNet
             }
         }
     }
+
+    namespace PropertyChangeEvents
+    {
+        using System.ComponentModel;
+
+        class Broadcast : INotifyPropertyChanged
+        {
+            private int receivedCount, seenCount;
+
+            public int ReceivedCount
+            {
+                get
+                {
+                    return this.receivedCount;
+                }
+                private set
+                {
+                    this.receivedCount = value;
+                    OnPropertyChanged(nameof(ReceivedCount));
+                }
+            }
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            private void OnPropertyChanged(string propertyName)
+            {
+                PropertyChanged?.Invoke(this,
+                    new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
 }

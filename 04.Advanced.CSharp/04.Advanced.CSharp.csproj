@@ -84,10 +84,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="01ExtensionMethods.cs" />
-    <Compile Include="02Delegates.cs" />
-    <Compile Include="03LambdaExpressions.cs" />
-    <Compile Include="04LINQ.cs" />
+    <Compile Include="01Interfaces.cs" />
+    <Compile Include="02Enums.cs" />
+    <Compile Include="04Generics.cs" />
+    <Compile Include="03ExtensionMethods.cs" />
+    <Compile Include="05Delegates.cs" />
+    <Compile Include="06LambdaExpressions.cs" />
+    <Compile Include="08LINQ.cs" />
+    <Compile Include="07AnonymousTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
