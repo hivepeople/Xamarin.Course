@@ -173,7 +173,23 @@
 
             public void DeferredExecution()
             {
+                var query = Enumerable.Range(1, 1000);
+                // not generated yet...
+                query = query.Where(i => i > 100);
+                // still not generated...
+                query = query.Where(i => i % 2 == 0);
+                // not generated here either
+                query = query.OrderBy(i => i);
+                // also not generated here...
+                var query2 = query.Select(i => new Person("" + i));
+                // also no people created yet...
 
+                foreach (var person in query2)
+                {
+                    // BAM! Now LINQ need to generate and create
+                    Console.WriteLine(person);
+                }
+                    
             }
         }
     }
